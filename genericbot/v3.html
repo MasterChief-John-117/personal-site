@@ -63,8 +63,10 @@
                                     <p>The Context provides the same message object and the array of parameters, but also provides the entire parameter string. Some commands manipulated that string, but previously it had to be either extracted from the message manually within the command or reconstructed from the parameter array, which was easier but didn't preserve newlines or irregular spacing. The global client is now accesible through the Core, ensuring there is only one static instance, instead of passing around references.</p>
                                     
                                     <h3 class="major">Location-Agnostic Execution</h3>
-                                    <p></p>
+                                    <p>The previous model for command execution relied on the server the command was being run in to determine some prerequisites. Rewriting it allowed me to remove these dependencies so some commands can now be run in direct messages. Commands that can't be run in DMs for other reasons are caught before exection to prevent exceptions being thrown.</p>
                                     
+                                    <h3 class="major">Exception Handling</h3>
+                                    <p>All exceptions are caught and reported, similarly to how <a href="https://sentry.io/welcome/">Sentry</a> works. The stack traces and reports are stored in the bot's database and checked every time a new exception is reported. If the same exception is seen five times, an issue is opened in Github for me to address.</p>
                                 </div>
 							</div>
 					</section>
