@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Galen Guyer | GenericBot</title>
+		<title>Galen Guyer | GenericBot v3</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
@@ -43,25 +43,22 @@
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-								<h2>GenericBot</h2>
-								<p>GenericBot aims to provide an almost full featured moderation and fun box experience in one convenient package</p>
+								<h2>GenericBot v3 Rewrite</h2>
+								<p>A ground-up rewrite to improve maintainability (and my sanity)</p>
 							</div>
 						</header>
 
 						<!-- Content -->
 							<div class="wrapper">
 								<div class="inner">
-                                    <h3 class="major">Links</h3>
-                                    <p>GenericBot is, and always will be, free to use. To invite it, click <a href="https://discordapp.com/oauth2/authorize?client_id=295329346590343168&scope=bot&permissions=2110258303">here</a>
-                                    <br />
-                                    Also, the source code is public on <a href="https://github.com/MasterChief-John-117/GenericBot">github</a>. You can also open bug reports on GitHub</p>
-                                    <h3 class="major">Self Assignable Roles</h3>
-                                    <p>One of the most common public features GenericBot is used for is roles a user can assign to themself. To see all the avaible roles, do >userroles. You can join a role with <code>>iam [rolename]</code> or leave a role with <code>>iamnot [rolename]</code>.</p>
-                                    <h3 class="major">Moderation</h3>
-                                    <p>GenericBot provides a wide range of tools for moderators to track users and infractions. It keeps track of all of a user's usernames, nicknames, and logged infractions, including kicks and timed or permanent bans. Users can be searched for either by ID, or by username or nickname, whether it be current or an old name. (All data is stored in an encrypted database, and data from one server is completely inaccessible by another server)</p>
-                                    <h3 class="major">Fun!</h3>
-                                    <p>In addition to being a highly effective moderator toolkit, GenericBot has some fun commands, such as <code>>dog</code>, <code>>cat</code>, or <code>>jeff</code>. You can also create your own custom commands for rapid-fire memery or whatever else tickles your fancy</p>
-								</div>
+
+                                    <h3 class="major">Databases</h3>
+                                    <p>In the 2 years GenericBot has existed, I've used three different databases as requirements have changed and the bot has scaled. When I started writing it, data was stored in json files, one per server the bot was on.</p>
+                                    <p>This worked fine when only a handlful of people used it, but then I started running into issues with concurrent file IO that culminated in data loss. I quickly moved it to <a href="https://www.litedb.org/">LiteDB</a>, an embedded NoSQL database, which solved my concurrency issues and had the benefit of easy password protection. LiteDB is a small project, however, and there aren't many tools for managing it. After a few months of using LiteDB, I started looking for a more powerful alternative.</p>
+                                    <p>After some searching, I settled on <a href="https://www.mongodb.com/">MongoDB.</a> It's very popular and well-supported, with many of the same features of LiteDB, but with more management tools and features.</p>
+                                    <p>One side effect of the multiple databases I've used is a lack of a single clear way of working with the database. Prior to the rewrite, different componenets talked to the database in their own ways.</p>
+                                    
+                                </div>
 							</div>
 					</section>
 
