@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Galen Guyer | Projects</title>
+		<meta charset="utf-8" />
+        <meta name="description" content="A list of some smaller projects I've worked on.">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Galen Guyer</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="/">Home</a></li>
+								<li><a href="/genericbot">GenericBot</a></li>
+								<li><a href="/cdn">CDN</a></li>
+								<li><a href="Resume.pdf">Resume</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Other Projects</h2>
+								<p>Some smaller projects I've worked on</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h2 class="major">Spotify Recent Plays <span style="border-left: 1px solid #8e8f91; padding-left: 6px;"><a style="color: #8e8f91;" href="https://galenguyer.com/spotify/">https://galenguyer.com/spotify/</a></span></h2>
+                                    
+                                    <p>A small project to display the songs I've recently listened to on Spotify. It draws directly from the spotify API using an ASP.NET app and displays it using a TypeScript/React app.</p>
+                                    
+                                    <p>The backend API is written in ASP.NET Core. To build it, I started by learning how <a href="https://oauth.net/2/">OAuth 2.0</a> works and implementing a client for it from scratch. It redirects to the login page, and once the callback token is recieved, it exchanges it for the access and refresh tokens. The client also automatically handles refreshing the tokens before they expire. In order to prevent someone else from logging in and displaying their data instead, during the login flow I verify that the email on the connecting account matches the one in the configuration. If it doesn't, the attempt is thrown out.</p>
+                                    
+                                    <p>The frontend is my first foray into TypeScript and my second project with React. I chose TypeScript because I'm handling complex objects and the type safety is useful. I found some requirements that TypeScript imposes annoying at first, but overall, I prefer writing React with TypeScript because of the additional safety. Getting Intellisense when using VS Code is a nice bonus as well.</p>
+                                    
+                                    <p>As always, the source is available <a href="https://github.com/MasterChief-John-117/SpotifyRecent">on github.</a></p>
+                                </div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<!-- <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p> -->
+							<ul class="contact">
+								<li class="icon solid fa-phone"><a href="tel:+14258983145">(425) 898-3145</a></li>
+								<li class="icon brands fa-github"><a href="https://github.com/MasterChief-John-117">MasterChief-John-117</a></li>
+								<li class="icon brands fa-discord"><a href="https://discordapp.com">MasterChief_John-117#1911</a></li>
+							</ul>
+                            <ul class="contact">
+								<li class="icon solid fa-envelope"><a href="mailto:galenguyer@outlook.com">galenguyer@outlook.com</a></li>
+								<li class="icon brands fa-linkedin"><a href="https://linkedin.com/in/galen-g/">/in/galen-g</a></li>
+								<li class="icon solid fa-file-alt"><a href="Resume.pdf">Resume</a></li>
+                            </ul>
+							<ul class="copyright">
+								<li>&copy; Galen Guyer, 2019. All rights reserved.</li>
+							</ul>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+            <script src="https://cdn.galenguyer.com/assets/solid-state/js/jquery.min.js"></script>
+			<script src="https://cdn.galenguyer.com/assets/solid-state/js/jquery.scrollex.min.js"></script>
+			<script src="https://cdn.galenguyer.com/assets/solid-state/js/browser.min.js"></script>
+			<script src="https://cdn.galenguyer.com/assets/solid-state/js/breakpoints.min.js"></script>
+			<script src="https://cdn.galenguyer.com/assets/solid-state/js/util.js"></script>
+			<script src="https://cdn.galenguyer.com/assets/solid-state/js/main.js"></script> 
+	</body>
+</html>
