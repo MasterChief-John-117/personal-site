@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300");
+@import url("https://cdn.galenguyer.com/fontawesome/css/solid.min.css");
+
+body {
+    text-align: center;
+    background-color: #2e3141;
+    color: #f5f5f5;
+    font-family: Raleway, Helvetica, sans-serif;
+}
+
+.main {
+    max-width: 640px;
+    margin: auto;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.status {
+    width: 200px;
+    padding: 32px;
+    margin: 16px;
+    margin-left: 32px;
+}
+
+.down {
+    background-color: red;
+
+}
+.up {
+    background-color: green;
+}
