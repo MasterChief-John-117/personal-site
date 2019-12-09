@@ -19,7 +19,6 @@ body {
 .status {
     padding: 32px;
     margin: 16px;
-    margin-left: 32px;
     order: 1;
     flex-grow: 1;
 }
