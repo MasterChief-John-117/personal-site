@@ -42,7 +42,7 @@ westus2.ontimeout = function () {
     document.getElementById('cluster-westus2-status').textContent = "Down"
     
 }
-westus2.open('HEAD', 'http://mastrchef.westus2.cloudapp.azure.com/azuretest');
+westus2.open('HEAD', 'https://mastrchef.westus2.cloudapp.azure.com/azuretest');
 westus2.send();
 
 var eastus2StartTime = new Date();
@@ -65,7 +65,7 @@ eastus2.ontimeout = function () {
     document.getElementById("cluster-eastus2").classList.add('down');
     document.getElementById('cluster-eastus2-status').textContent = "Down"
 }
-eastus2.open('HEAD', 'http://mastrchef.eastus2.cloudapp.azure.com/azuretest');
+eastus2.open('HEAD', 'https://mastrchef.eastus2.cloudapp.azure.com/azuretest');
 eastus2.send();
 
 var seasiaStartTime = new Date();
@@ -88,7 +88,7 @@ seasia.ontimeout = function () {
     document.getElementById("cluster-seasia").classList.add('down');
     document.getElementById('cluster-seasia-status').textContent = "Down"
 }
-seasia.open('HEAD', 'http://mastrchef.southeastasia.cloudapp.azure.com/azuretest');
+seasia.open('HEAD', 'https://mastrchef.southeastasia.cloudapp.azure.com/azuretest');
 seasia.send();
 
 var euwestStartTime = new Date();
@@ -111,5 +111,5 @@ euwest.ontimeout = function () {
     document.getElementById("cluster-euwest").classList.add('down');
     document.getElementById('cluster-euwest-status').textContent = "Down"
 }
-euwest.open('HEAD', 'http://mastrchef.westeurope.cloudapp.azure.com/azuretest');
+euwest.open('HEAD', 'https://mastrchef.westeurope.cloudapp.azure.com/azuretest');
 euwest.send();
