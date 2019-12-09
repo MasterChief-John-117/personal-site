@@ -40,6 +40,7 @@ westus2.ontimeout = function () {
     document.getElementById('cluster-westus2-status').textContent = "Down"
     upCount = upCount;    
 }
+westus2.onerror = westus2.ontimeout
 westus2.open('HEAD', 'https://mastrchef.westus2.cloudapp.azure.com/azuretest');
 westus2.send();
 
@@ -64,6 +65,7 @@ eastus2.ontimeout = function () {
     document.getElementById('cluster-eastus2-status').textContent = "Down"
     upCount = upCount;
 }
+eastus2.onerror = eastus2.ontimeout
 eastus2.open('HEAD', 'https://mastrchef.eastus2.cloudapp.azure.com/azuretest');
 eastus2.send();
 
@@ -88,6 +90,7 @@ seasia.ontimeout = function () {
     document.getElementById('cluster-seasia-status').textContent = "Down"
     upCount = upCount;
 }
+seasia.onerror = seasia.ontimeout
 seasia.open('HEAD', 'https://mastrchef.southeastasia.cloudapp.azure.com/azuretest');
 seasia.send();
 
@@ -112,6 +115,7 @@ euwest.ontimeout = function () {
     document.getElementById('cluster-euwest-status').textContent = "Down"
     upCount = upCount;
 }
+euwest.onerror = euwest.ontimeout;
 euwest.open('HEAD', 'https://mastrchef.westeurope.cloudapp.azure.com/azuretest');
 euwest.send();
 
