@@ -1,4 +1,4 @@
-var timeout = 1000;
+var timeout = 2000;
 var value_of_upCount = 0;
 Object.defineProperty(window, "upCount", { 
     get: function(v) {
