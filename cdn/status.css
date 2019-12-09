@@ -21,12 +21,15 @@ body {
     padding: 32px;
     margin: 16px;
     margin-left: 32px;
+    order: 1;
 }
 
 .down {
     background-color: red;
+    order: -1;
 
 }
 .up {
     background-color: green;
+    order: 0;
 }
