@@ -6,9 +6,6 @@ Object.defineProperty(window, "upCount", {
         return value_of_upCount;
     },
     set: function(v) { 
-        console.log("finishedRequests: " + finishedRequests);
-        console.log("upCount: " + v);
-        
         if(finishedRequests == 4){
             if (v == finishedRequests) {
                 document.getElementById('global').textContent = "All Up"            
