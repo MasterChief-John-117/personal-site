@@ -1,4 +1,4 @@
-var timeout = 2000;
+var timeout = 3000;
 var value_of_upCount = 0;
 var finishedRequests = 0;
 Object.defineProperty(window, "upCount", { 
