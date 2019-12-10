@@ -25,10 +25,16 @@ body {
 
 .down {
     background-color: red;
-    order: -1;
-
 }
 .up {
     background-color: #009900;
-    order: 0;
+}
+
+@media screen and (max-width: 800px) {
+    .down {
+        order: -1;
+    }
+    .up {
+        order: 0;
+    }  
 }
