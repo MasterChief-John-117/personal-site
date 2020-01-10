@@ -14,3 +14,7 @@ a {
     color: #888888;
     text-decoration: none;
 }
+
+pre>hr{
+    margin: 0;
+}
