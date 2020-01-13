@@ -118,7 +118,7 @@ add_header Feature-Policy "geolocation 'none'; midi 'none'; sync-xhr 'none'; mic
             </li>
             <li>
                 <p>Now that your basic SSL configuration is done, go to your <code>/etc/nginx/sites-available/</code> to create the server configuration. Then, symlink it to your <code>sites-enabled</code> directory so it's loaded by nginx. The following configuration is just for setting up SSL. After you obtain an SSL certificate, you'll modify the configuration to be secure</p>
-                <pre><b>/etc/nginx/sites-available/galenguyer.conf</b>
+                <pre><b>/etc/nginx/sites-available/galenguyer.com.conf</b>
                 <hr>
 server {
         listen 80;
@@ -126,7 +126,7 @@ server {
         server_name galenguyer.com;
         root /var/www/html;
 }</pre>
-                <pre>sudo ln -s /etc/nginx/sites-available/galenguyer.conf /etc/nginx/sites-enabled/galenguyer.conf</pre>
+                <pre>sudo ln -s /etc/nginx/sites-available/galenguyer.com.conf /etc/nginx/sites-enabled/galenguyer.com.conf</pre>
             </li>
 
             <li>
@@ -136,7 +136,7 @@ server {
             </li>
             <li>
                 <p>Finally, modify the server configuration for HTTPS</p>
-                <pre><b>/etc/nginx/sites-available/galenguyer.conf</b>
+                <pre><b>/etc/nginx/sites-available/galenguyer.com.conf</b>
                 <hr>
 server {
     listen 80;
