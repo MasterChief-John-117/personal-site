@@ -18,8 +18,8 @@
         <ol>
             <li>
                 <p>You can either install nginx using your favorite package manager, or build the latest release with OpenSSL using <a href="build-nginx.sh">this script</a>, courtesy of <a href="https://seedno.de/">Seednode</a>.</p>
-                <p>If you use the script, you will have to install the following dependencies:</p>
-                <pre>build-essential golang zlib1g-dev libcurl4-openssl-dev libpcre3-dev</pre>
+                <p>If you use the script, you will have to install the following dependencies (as of Ubuntu 18.04):</p>
+                <pre>sudo apt-get install build-essential golang zlib1g-dev libcurl4-openssl-dev libpcre3-dev -y</pre>
                 <p>Also, install certbot-auto with the following commands</p>
                 <pre>sudo wget https://dl.eff.org/certbot-auto -O /usr/local/bin/certbot-auto
 sudo chmod a+x /usr/local/bin/certbot-auto</pre>
@@ -28,8 +28,9 @@ sudo chmod a+x /usr/local/bin/certbot-auto</pre>
                 <p>Enter the <code>/etc/nginx/</code> directory to set up nginx. You will need root permissions to modify or create flies in this directory. It will be populated with a few basic config files as well as default versions for all of them, which you can choose to keep or remove with <code>rm *default</code>.</p>
             </li>
             <li>
-                <p>Create two directories, <code>subdomains</code> and <code>ssl</code>.</p>
-                <p>Modify your <code>nginx.conf</code> to include all files in the <code>subdomains</code> directory that end with conf. An example <code>nginx.conf</code> is below</p>
+                <p>Create three directories, <code>sites-available</code>, <code>sites-enabled</code>, and <code>ssl</code>.</p>
+                <pre>sudo mkdir -p /etc/nginx/{sites-available,sites-enabled,ssl}</pre>
+                <p>Modify your <code>nginx.conf</code> to include all files in the <code>sites-enabled</code> directory that end with conf. An example <code>nginx.conf</code> is below</p>
                 <pre><b>/etc/nginx/nginx.conf</b>
                 <hr>
 user www-data;
@@ -61,7 +62,7 @@ http {
 	error_log /var/log/nginx/error.log;
 
 	# Virtual Host Configs
-	include /etc/nginx/subdomains/*.conf;
+	include /etc/nginx/sites-enabled/*.conf;
 }</pre>
             </li>
             <li>
@@ -116,8 +117,8 @@ add_header Feature-Policy "geolocation 'none'; midi 'none'; sync-xhr 'none'; mic
                 <pre>sudo systemctl reload nginx</pre>
             </li>
             <li>
-                <p>Now that your basic SSL configuration is done, go to your <code>/etc/nginx/subdomains/</code> to create the server configuration. The following configuration is just for setting up SSL. After you obtain an SSL certificate, you'll modify the configuration to be secure</p>
-                <pre><b>/etc/nginx/subdomains/galenguyer.conf</b>
+                <p>Now that your basic SSL configuration is done, go to your <code>/etc/nginx/sites-available/</code> to create the server configuration. Then, symlink it to your <code>sites-enabled</code> directory so it's loaded by nginx. The following configuration is just for setting up SSL. After you obtain an SSL certificate, you'll modify the configuration to be secure</p>
+                <pre><b>/etc/nginx/sites-available/galenguyer.conf</b>
                 <hr>
 server {
         listen 80;
@@ -125,6 +126,7 @@ server {
         server_name galenguyer.com;
         root /var/www/html;
 }</pre>
+                <pre>sudo ln -s /etc/nginx/sites-available/galenguyer.conf /etc/nginx/sites-enabled/galenguyer.conf</pre>
             </li>
 
             <li>
@@ -134,7 +136,7 @@ server {
             </li>
             <li>
                 <p>Finally, modify the server configuration for HTTPS</p>
-                <pre><b>/etc/nginx/subdomains/galenguyer.conf</b>
+                <pre><b>/etc/nginx/sites-available/galenguyer.conf</b>
                 <hr>
 server {
     listen 80;
