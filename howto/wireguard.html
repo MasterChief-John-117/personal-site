@@ -65,9 +65,23 @@ Endpoint = <b>&lt;SERVER IP AADRESS&gt;</b>:51820
 PersistentKeepalive = 25
 </pre>
             </li>
+            <li>
+                <p>To adjust what addresses are forwarded to the server, edit the client configuration's <code>AllowedIPs</code> option. You can have multiple comma-delimted subnets.</p>
+            </li>
+            <li>
+                <p>Secure the configuration folder so only administrators can read it and the secret keys within</p>
+                <pre>sudo chown -R root:root /etc/wireguard/
+sudo chmod -R og-rwx /etc/wireguard/*</pre>
+            </li>
+            <li>
+            <p>To start the VPN , run <code>sudo wg-quick up wg0</code>. Use <code>sudo wg-quick wg0 down</code> to take it offline</p></li>
+            <li><p>To set the interface to run automatically on startup, run</p>
+            <pre>sudo systemctl enable wg-quick@wg0.service</pre>
+            You can start the service with
+            <pre>sudo systemctl start wg-quick@wg0.service</pre></li>
         </ol>
         <hr>
-            <p>Heavily draws from <a href="https://www.stavros.io/posts/how-to-configure-wireguard/">https://www.stavros.io/posts/how-to-configure-wireguard/</a>. Do yourself a favor and read it, it contains a lot of helpful information beyond this quick setup guide.</p>
+        <p>Heavily draws from <a href="https://www.stavros.io/posts/how-to-configure-wireguard/">https://www.stavros.io/posts/how-to-configure-wireguard/</a>. Do yourself a favor and read it, it contains a lot of helpful information beyond this quick setup guide.</p>
         <hr>
     </article>
 </body>
