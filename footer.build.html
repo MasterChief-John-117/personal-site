@@ -1,7 +1,6 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
-							<!-- <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p> -->
 							<ul class="contact">
 								<li class="icon solid fa-phone"><a href="tel:+14258983145">(425) 898-3145</a></li>
 								<li class="icon brands fa-github"><a href="https://github.com/MasterChief-John-117">MasterChief-John-117</a></li>
@@ -13,7 +12,8 @@
 								<li class="icon solid fa-file-alt"><a href="/Resume.pdf">Resume</a></li>
                             </ul>
 							<ul class="copyright">
-								<li>&copy; Galen Guyer, 2019. All rights reserved. Build <a href="https://github.com/MasterChief-John-117/personal-site/tree/{{COMMIT}}">{{COMMIT}}</a>, built at {{TIME}}</li>
+								<li>&copy; Galen Guyer, 2019. All rights reserved. Build <a href="https://github.com/MasterChief-John-117/personal-site/tree/{{COMMIT}}">{{COMMIT}}</a>, built at <span id="date">{{TIME}}</span></li>
+								<script>document.getElementById('date').innerHTML = new Date('{{TIME}}').toLocaleString()</script>
 							</ul>
 						</div>
 					</section>

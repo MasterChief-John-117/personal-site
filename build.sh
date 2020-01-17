@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COMMIT=`git rev-parse HEAD | cut -c 1-8`
-TIME=`date +"%m-%d-%Y %T %Z"`
+TIME=`date +"%FT%R:%S%:z"`
 
 rm -r build/
 mkdir build/
