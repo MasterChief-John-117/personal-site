@@ -25,3 +25,4 @@ sed -i $'/[{][{]MENU[}][}]/{r menu.build.html\nd}' */*.html
 
 # Clean up after ourselves
 rm -r build/
+rm *build.html
