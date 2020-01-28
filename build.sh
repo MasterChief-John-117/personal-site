@@ -18,6 +18,10 @@ sed -i "s/[{][{]TIME[}][}]/$TIME/g" */*.html
 sed -i $'/[{][{]FOOTER[}][}]/{r footer.build.html\nd}' *.html
 sed -i $'/[{][{]FOOTER[}][}]/{r footer.build.html\nd}' */*.html
 
+# Build Scripts
+sed -i $'/[{][{]SCRIPTS[}][}]/{r scripts.build.html\nd}' *.html
+sed -i $'/[{][{]SCRIPTS[}][}]/{r scripts.build.html\nd}' */*.html
+
 # Build Menu
 sed -i $'/[{][{]MENU[}][}]/{r menu.build.html\nd}' *.html
 sed -i $'/[{][{]MENU[}][}]/{r menu.build.html\nd}' */*.html
