@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Galen Guyer | Code of Conduct</title>
+    <title>Galen Guyer | Jensen Post-Mortem</title>
     <meta charset="utf-8" />
     <meta name="description" content="A standard Code of Conduct for services I maintain.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -52,7 +52,7 @@
 
                     <h3 id="impact">Impact</h3>
 
-                    <p>Nine remote connections to the testing account on jensen were logged. The primary attack, which we noticed and was the last logged connection, was a 3 part attack: A bitcoin miner (which threw the CPU usage alert), a perl script, and an ssh bruteforcing binary. This attack likely had no impact on user data. The previous connection, which was from the same IP three minutes prior, left a file named <code>/tmp/up.txt</code> that contained what appeared to be the username and password of the testing user. It then attempted to change the password with <code>passwd</code>, which failed because we use Kerberos/FreeIPA. The impacts of the other connections are unknown at this time.</p>
+                    <p>Nine remote connections to the testing account on jensen were logged. The primary attack, which we noticed and was the last logged connection, was a 3 part attack: A bitcoin miner (which threw the CPU usage alert), a perl script, and an ssh bruteforcing binary. This attack likely had no impact on user data. The previous connection, which was from the same IP three minutes prior, left a file named <code>/tmp/up.txt</code> that contained what intially appeared to be the username and password of the testing user, however whether or not this is correct is unkonwn. It then attempted to change the password with <code>passwd</code>, which failed because we use Kerberos/FreeIPA. The impacts of the other connections are unknown at this time.</p>
 
                     <h3 id="what-happened">What Happened</h3>
 
