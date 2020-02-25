@@ -94,30 +94,30 @@ seasia.onerror = seasia.ontimeout
 seasia.open('HEAD', 'https://mastrchef.southeastasia.cloudapp.azure.com/azuretest');
 seasia.send();
 
-var euwestStartTime = new Date();
-var euwest = new XMLHttpRequest();
-euwest.timeout = timeout;
-euwest.onload = function () {
+var uksouthStartTime = new Date();
+var uksouth = new XMLHttpRequest();
+uksouth.timeout = timeout;
+uksouth.onload = function () {
     finishedRequests++;
-	if (euwest.status >= 200 && euwest.status < 300) {
-        document.getElementById("cluster-euwest").className = 'status up';
-        document.getElementById('cluster-euwest-status').textContent = "Up! (" + (new Date().getTime() - euwestStartTime.getTime()) + "ms)"
+	if (uksouth.status >= 200 && uksouth.status < 300) {
+        document.getElementById("cluster-uksouth").className = 'status up';
+        document.getElementById('cluster-uksouth-status').textContent = "Up! (" + (new Date().getTime() - uksouthStartTime.getTime()) + "ms)"
         upCount++;
 	} else {
-        document.getElementById("cluster-euwest").className = 'status down';
-        document.getElementById('cluster-euwest-status').textContent = "Down"
+        document.getElementById("cluster-uksouth").className = 'status down';
+        document.getElementById('cluster-uksouth-status').textContent = "Down"
         upCount = upCount;
 	}
 };
-euwest.ontimeout = function () {
+uksouth.ontimeout = function () {
     finishedRequests++;
-    document.getElementById("cluster-euwest").className = 'status down';
-    document.getElementById('cluster-euwest-status').textContent = "Down"
+    document.getElementById("cluster-uksouth").className = 'status down';
+    document.getElementById('cluster-uksouth-status').textContent = "Down"
     upCount = upCount;
 }
-euwest.onerror = euwest.ontimeout;
-euwest.open('HEAD', 'https://mastrchef.westeurope.cloudapp.azure.com/azuretest');
-euwest.send();
+uksouth.onerror = uksouth.ontimeout;
+uksouth.open('HEAD', 'https://mastrchef.uksouth.cloudapp.azure.com/azuretest');
+uksouth.send();
 
 setInterval(function() {
     finishedRequests = 0;
@@ -131,8 +131,8 @@ setInterval(function() {
     seasia.open('HEAD', 'https://mastrchef.southeastasia.cloudapp.azure.com/azuretest');
     seasiaStartTime = new Date();
     seasia.send();
-    euwest.open('HEAD', 'https://mastrchef.westeurope.cloudapp.azure.com/azuretest');
-    euwestStartTime = new Date();
-    euwest.send();
+    uksouth.open('HEAD', 'https://mastrchef.uksouth.cloudapp.azure.com/azuretest');
+    uksouthStartTime = new Date();
+    uksouth.send();
 
 }, 5000)
